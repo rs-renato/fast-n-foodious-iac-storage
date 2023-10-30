@@ -3,7 +3,7 @@ run-name: Terraform AWS Deployment
 on: [push]
 
 jobs:
-  terraform:
+  deploy-aws:
     runs-on: ubuntu-latest
 
     steps:
