@@ -52,6 +52,7 @@ resource "null_resource" "rds-initialization" {
     }
 
     provisioner "local-exec" {
+      interpreter=["/bin/bash", "-c"]
       command = <<-EOF
             # iterate over all sql files
             for file in schema/*.sql; do
