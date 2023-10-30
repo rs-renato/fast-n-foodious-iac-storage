@@ -30,4 +30,6 @@ jobs:
 
       - name: Apply Terraform Changes
         if: ${{ github.ref == 'refs/heads/main' }}
+        shell: bash
         run: terraform apply -auto-approve terraform.tfplan
+
