@@ -73,7 +73,7 @@ resource "null_resource" "rds-initialization" {
                         echo "$sql_block"
 
                         # Execute the SQL block using aws rds-data
-                        aws rds-data execute-statement --resource-arn "$DB_ARN" --database "$DB_NAME" --secret-arn "$SECRET_ARN" --sql "$sql_block"
+                        aws rds-data execute-statement --resource-arn "$DB_ARN" --database "$DB_NAME" --secret-arn "$SECRET_ARN" --sql "$sql_block" --region us-east-1
 
                         # Reset the sql_block variable
                         sql_block=""
