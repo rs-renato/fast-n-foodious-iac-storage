@@ -8,7 +8,7 @@ terraform {
   required_version = ">=1.0"
 
   backend "s3" {
-    bucket  = "fast-n-foodious-terraform-storage"
+    bucket  = "fnf-tf-storage"
     key     = "terraform.tfstate"
     region  = "us-east-1"
   }
