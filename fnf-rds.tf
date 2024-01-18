@@ -40,7 +40,7 @@ resource "aws_db_subnet_group" "fnf-db-subnet-group" {
   name       = "fnf-db-subnet-group"
   subnet_ids = [ data.terraform_remote_state.network.outputs.fnf-subnet-private1-us-east-1a_id, data.terraform_remote_state.network.outputs.fnf-subnet-private2-us-east-1b_id]
   tags = {
-    Name = "RDS subnet group"
+    Name = "database subnet group"
   }
 }
 
