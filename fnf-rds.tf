@@ -80,6 +80,11 @@ resource "random_password" "fnf-random-passoword" {
   override_special = "!#$%&*()-_=+[]{}<>:?"
 }
 
+resource "random_password" "fnf-random-passoword-documentdb" {
+  length           = 16
+  special          = false
+}
+
 resource "null_resource" "rds-produto-initialization" {
     triggers = {
       init = filesha1("${path.module}/scripts/schema/produto/1-init-produto.sql")
