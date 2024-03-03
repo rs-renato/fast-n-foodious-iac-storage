@@ -6,6 +6,13 @@ CREATE TABLE IF NOT EXISTS CLIENTE (
                                        CPF VARCHAR(11) NOT NULL UNIQUE
 );
 
+-- Criando um usuário pré-definido para ser utilizado na deleção de clientes
+-- (antes de um cliente ser deletado fisicamente, todos os pedidos a ele associados são atualizados para se relacionarem
+-- com o usuário pré-definido)
+INSERT IGNORE INTO
+    CLIENTE (ID, NOME, EMAIL, CPF)
+VALUES (1, 'Usuário Deletado (LGPD)', 'deletado.lgpd@fnf.com', '00000000191');
+
 -- Tabela PEDIDO
 CREATE TABLE IF NOT EXISTS PEDIDO (
                                        ID INT PRIMARY KEY AUTO_INCREMENT,
